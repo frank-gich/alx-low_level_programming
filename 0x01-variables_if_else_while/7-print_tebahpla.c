@@ -3,19 +3,19 @@
 #include <time.h>
 
 /**
- * main - prints the alphabet in reverse.
+ * main - Entry point
  *
- * Return:  0 on Success
+ * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	char low = 'z';
+	char c = 'z';
 	
-	 while (low >= 'a')
+	 while c >= 'a')
 	   {
-	        putchar(low);
-   	        low--;
+	        putchar(c);
+   	        c--;
 }
 	putchar('\n');
 
