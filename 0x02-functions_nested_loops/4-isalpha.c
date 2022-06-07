@@ -1,24 +1,26 @@
 #include "main.h"
 
 /**
- * _isalpha - Check main
- * @c: An input character
- * Description: function returns 1 if the character is a
- * letter, lowercase or uppercase.
- * Return: 1 or 0 in otherwise.
+ * test_isalpha - Test the _isalpha function
+ *
+ * @n: Number to pass to _isalpha function
  */
-int _isalpha(int c)
+void test_isalpha(int c)
 {
-	char lower, upper;
-	int isletter = 0;
+	int r;
 
-	for (lower = 'a'; lower <= 'z'; lower++)
-	{
-		for (upper = 'A'; upper <= 'Z'; upper++)
-		{
-			if (c == lower || c == upper)
-				isletter = 1;
-		}
-	}
-	return (isletter);
+	r = _isalpha(c);
+	_putchar(r + '0');
+	_putchar('\n');
+}
+
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: 0 or 1.
+ */
+int main(void)
+{
+	test_isalpha('H');
+	return (0);
 }
