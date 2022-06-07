@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * print_alphabet_x10 - Output lowercase alphabet 10 times followed by newline
  *
