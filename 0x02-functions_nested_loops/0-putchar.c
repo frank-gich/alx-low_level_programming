@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * main - Check description
  * Description: It prints the word putchar, followed by a new line.
