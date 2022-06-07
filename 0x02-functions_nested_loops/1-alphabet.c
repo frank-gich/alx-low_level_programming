@@ -1,7 +1,9 @@
-#include "stdio.h"
+#include "main.h"
+
 /**
- * print_alphabet - prints the english alphabet from a-z.
- * Return: Nothing.
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
  */
 void print_alphabet(void);
 {
