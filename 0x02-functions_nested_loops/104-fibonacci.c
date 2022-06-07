@@ -11,7 +11,7 @@ int main(void)
 	int i;
 
 	unsigned long int x, y, z;
-	
+
     x = 1;
 	y = 2;
 
@@ -26,5 +26,5 @@ int main(void)
 
 
 	putchar('\n');
-	return (0);
+    return (0);
 }
