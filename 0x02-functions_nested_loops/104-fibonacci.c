@@ -11,7 +11,8 @@ int main(void)
 	int i;
 
 	unsigned long int x, y, z;
-	x = 1;
+	
+    x = 1;
 	y = 2;
 
 	printf("%lu, %lu", x, y);
