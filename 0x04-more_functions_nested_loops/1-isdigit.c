@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _isupper - uppercase letters
+ * _isdigit - checks for characters that are digits
  * @c: character to check
  *
  * Return: 0 or 1
  */
 
 
-int _isupper(int c)
+int _isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
