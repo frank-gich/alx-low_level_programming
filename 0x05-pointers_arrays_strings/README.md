@@ -8,3 +8,5 @@ a function that prints every other character of a string, starting with the firs
 a function that prints half of a string, followed by a new line. Prototype: void puts_half(char *str);
 a function that prints n elements of an array of integers, followed by a new line. Prototype: void print_array(int *a, int n); where n is the number of elements of the array to be printed
 a function that copies the string pointed to by src, including the terminating null byte (\0), to the buffer pointed to by dest. Return value: the pointer to dest
+a function that convert a string to an integer.Prototype: int _atoi(char *s);  The number in the string can be preceded by an infinite number of characters You need to take into account all the - and + signs before the number If there are no numbers in the string, the function must return 0
+a program that generates random valid passwords for the program 101-crackme.  You are allowed to use the standard library You don’t have to pass the betty-style tests (you still need to pass the betty-doc tests) man srand, rand, time gdb and objdump can help
