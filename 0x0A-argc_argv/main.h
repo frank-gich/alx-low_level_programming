@@ -7,6 +7,7 @@ int main(int argc, char *argv[]);
 int main(int argc, char *argv[]);
 int main(int argc, char *argv[]);
 int main(int argc, char *argv[]);
+int change(int cents);
 
 
 #endif /* MAIN_H */
