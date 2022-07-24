@@ -1,21 +1,30 @@
+#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
+
 /**
-  * _calloc - allocates memory for an initialized buffer
-  * @nmemb: number of memory bytes
-  * @size: number of data type bits
-  * Return: return pointer to initialized buffer
-  */
+ * *_calloc - function to allocates memory
+ * @nmemb: unsigned int type
+ * @size: unsigned int type
+ * Return: return pointer to array
+ */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *p;
-	unsigned int i;
+	char *ptr;
+	unsigned int count;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	p = malloc(size * nmemb);
-	if (p == NULL)
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+	{
 		return (NULL);
-	for (i = 0; i < nmemb ; i++)
-		p[i] = 0;
-	return (p);
+	}
+	count = 0;
+	while (count < nmemb * size)
+	{
+		ptr[count] = 0;
+		count++;
+	}
+	return (ptr);
 }
