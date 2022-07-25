@@ -1,49 +1,91 @@
 #include "variadic_functions.h"
+#include "stdio.h"
+
 /**
- * print_all - prints anything
- * @format: list of types or arguments to be passed
- * Return: void
+ * print_int - function to print ints
+ * @arg: va_list type
+ * Return: always successful
+ */
+void print_int(va_list arg)
+{
+	printf("%d", va_arg(arg, int));
+}
+
+/**
+ * print_char - function to print char
+ * @arg: va_list type
+ * Return: always successful
+ */
+
+void print_char(va_list arg)
+{
+	printf("%c", va_arg(arg, int));
+}
+/**
+ * print_float - function to print floats
+ * @arg: va_list type
+ * Return: always successful
+ */
+void print_float(va_list arg)
+{
+	printf("%f", va_arg(arg, double));
+}
+
+/**
+ * print_string - function to print string
+ * @arg: va_list type
+ * Return: always successful
+ */
+void print_string(va_list arg)
+{
+	char *pr;
+
+	pr = va_arg(arg, char*);
+	if (pr == NULL)
+	{
+		pr = "(nil)";
+	}
+	printf("%s", pr);
+}
+
+/**
+ * print_all - function to print all inputs
+ * @format: const pointer to functionof type char
+ * Return: always successful
  */
 void print_all(const char * const format, ...)
 {
-	va_list valist;
-	char *temp_s;
-	int i = 0, orders;
+	int i, j;
+	va_list arg;
+	char *seperator;
 
+	pt types[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string},
+		{NULL, NULL}
+	};
+
+	va_start(arg, format);
+
+	i = 0;
+	seperator = "";
 	while (format && format[i])
 	{
-		va_start(valist, format);
-		while (format[i])
+		j = 0;
+		while (types[j].test != NULL)
 		{
-			orders = 1;
-			switch (format[i++])
+			if (format[i] == types[j].test[0])
 			{
-			case 'c':
-				printf("%c", va_arg(valist, int));
-				break;
-			case 'i':
-				printf("%d", va_arg(valist, int));
-				break;
-			case 'f':
-				printf("%f", va_arg(valist, double));
-				break;
-			case 's':
-				temp_s = va_arg(valist, char*);
-				if (temp_s)
-				{
-					printf("%s", temp_s);
-					break;
-				}
-				printf("(nil)");
-				break;
-			default:
-				orders = 0;
-				break;
+				printf("%s", seperator);
+				types[j].printer(arg);
+				seperator = ", ";
 			}
-			if (format[i] && orders)
-				printf(", ");
+			j++;
 		}
-		va_end(valist);
+		i++;
 	}
 	printf("\n");
+	va_end(arg);
 }
