@@ -1,28 +1,22 @@
 #include "main.h"
 /**
- * countSetBits - function to count set  bits
- * @n: unsigned long int type
- * Return: return count of set bits
+ * flip_bits - Entry Point
+ * @n: input
+ * @m: bits
+ * Return: 0
  */
-unsigned int countSetBits(unsigned long int n)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned int count = 0;
 
-	while (n)
+	while (n != 0 || m != 0)
 	{
-		count += n & 1;
-		n >>= 1;
+		if ((n & 1) != (m & 1))
+			count++;
+		m = m >> 1;
+		n = n >> 1;
 	}
-	return (count);
-}
-/**
- * flip_bits - function to return number of bits
- * @n: unsigned long int type
- * @m: unsigned long int type
- * Return: always successful
- */
 
-unsigned int flip_bits(unsigned long int n, unsigned long int m)
-{
-	return (countSetBits(n ^ m));
+	return (count);
+
 }

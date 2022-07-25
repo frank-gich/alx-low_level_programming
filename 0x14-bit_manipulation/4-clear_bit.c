@@ -1,21 +1,21 @@
 #include "main.h"
 /**
- * clear_bit - function to clearbit
- * @n: unsigned  long int type
- * @index: index to clear
- * Return:  1 if successful or -1 if failed
+ * clear_bit - Entry Point
+ * @n: input
+ * @index: index
+ * Return: 0
  */
-
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int check = 1;
-	unsigned int size = sizeof(n) * 8;
+	unsigned long int bits;
 
-	if (*n == '\0')
+	if (n == NULL)
 		return (-1);
-	if (index > size)
-		return (-1);
-	check <<= index;
-	*n &= ~check;
+
+	bits = 1 << index;
+
+	if ((bits | *n) == *n)
+		*n = *n ^ bits;
+
 	return (1);
 }

@@ -1,34 +1,33 @@
 #include "main.h"
-
 /**
- * print_binary - function to convert number to binary
- * @n: unsigned long  int type;
- * Return: always successful
+ * print_binary - Entry Point
+ * @n: dec input
+ * Return: 0
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int check;
-	unsigned int size = sizeof(n) * 8;
-	unsigned int count;
-	unsigned int flag = 1;
+	int i = 0, count, k, temp;
 
-	count = 0;
-	while (count < size)
+	if (n == 0)
 	{
-		check = (n << 1);
-		check >>= 1;
-		if (n != check)
-		{
-			flag = 0;
-			write(1, "1", 1);
-		}
-		else if (!flag)
-		{
-			write(1, "0", 1);
-		}
-		n <<=  1;
-		count++;
+		printf("0");
+		return;
 	}
-	if (flag == 1)
-		write(1, "0", 1);
+
+	temp = n;
+
+	while (temp != 0)
+	{
+		i++;
+		temp = temp >> 1;
+	}
+
+	for (count = i - 1; count >= 0; count--)
+	{
+		k = n >> count;
+		if (k & 1)
+			printf("1");
+		else
+			printf("0");
+	}
 }
