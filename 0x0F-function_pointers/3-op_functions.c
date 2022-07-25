@@ -1,56 +1,57 @@
 #include "3-calc.h"
-#include <stdio.h>
 /**
- * op_add - add function
- * @a: int type
- * @b: int type
- * Return: sum of two int
+ * op_add - addition of a + b
+ * @a: input integer a
+ * @b: input integer b
+ * Return: sum
  */
 int op_add(int a, int b)
 {
 	return (a + b);
 }
-
 /**
- * op_sub - substract function
- * @a: int type
- * @b: int type
- * Return: subtract two ints
+ * op_sub - subtraction of a - b
+ * @a: input integer a
+ * @b: input integer b
+ * Return: difference
  */
 int op_sub(int a, int b)
 {
 	return (a - b);
 }
-
 /**
- * op_mul - multiply function
- * @a: int type
- * @b: int type
- * Return: multiply two ints
+ * op_mul - multiplication of a * b
+ * @a: input integer a
+ * @b: input integer b
+ * Return: product
  */
 int op_mul(int a, int b)
 {
 	return (a * b);
 }
-
 /**
- * op_div - divide two ints
- * @a: int type
- * @b: int type
- * Return: divide two ints
+ * op_div - division of a / b
+ * @a: input integer a
+ * @b: input integer b
+ * Return: quotient
  */
 int op_div(int a, int b)
 {
-	return (a / b);
+	if (b != 0)
+		return (a / b);
+	printf("Error\n");
+	exit(100);
 }
-
 /**
- * op_mod - modulos of two ints
- * @a: int type
- * @b: int type
- * Return: modulus of two ints
+ * op_mod - modulo of a / b
+ * @a: input integer a
+ * @b: input integer b
+ * Return: remainder
  */
 int op_mod(int a, int b)
 {
-	return (a % b);
+	if (b != 0)
+		return (a % b);
+	printf("Error\n");
+	exit(100);
 }

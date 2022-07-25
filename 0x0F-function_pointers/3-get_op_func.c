@@ -1,13 +1,9 @@
 #include "3-calc.h"
-#include <stdio.h>
-
 /**
- * get_op_func - function to select operator
- *
- * @s: chat type
- * Return: always successful
+ * get_op_func - selects the correct function to perform operation
+ * @s: input symbol
+ * Return: pointer to another function the performs operation
  */
-
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
@@ -18,12 +14,15 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	int i = 0;
 
-	i = 0;
-	while (ops[i].op != NULL && strcmp(ops[i].op, s) != 0)
+	while (ops[i].op)
 	{
-		i++;
+		if (strcmp(ops[i].op, s))
+			i++;
+		else
+			return (ops[i].f);
 	}
-	return (ops[i].f);
+	printf("Error\n");
+	exit(99);
 }
