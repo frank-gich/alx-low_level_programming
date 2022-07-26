@@ -1,5 +1,5 @@
 #include "main.h"
-void closer(int arg_files);
+vvoid closer(int arg_files);
 /**
  * main - Entry Point
  * @argc: # of args
