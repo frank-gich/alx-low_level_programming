@@ -1,5 +1,3 @@
-
-
 #include "lists.h"
 /**
  * free_listint_safe - frees linked list safe version
