@@ -1,15 +1,6 @@
-0-print_name.c prints a name
-
-1-array_iterator.c executes a function on each element of an array
-
-2-int_index.c Searches for an integer in a string
-
-Simple Calculator: 3-calc.h header file that contains prototypes, etc.
-
-3-get_op_func.c Selects the correct function to perform the operation.
-
-3-op_functions.c Contains 5 functions: a + b, a - b, a * b, a / b, a % b
-
-3-main.c main function, accepts command line arguments in the form of "calc num1 operator num2" EX: calc 15 * 65
-
-100-main_opcodes.c prints the opcodes of its own main function. useage: ./main number_of_bytes
+#!/bin/bash
+Tasks for this project:
+0. Write a function that prints a name
+1. Write a function that executes a function given as a parameter on each element of an array
+2. Write a function that searches for an integer
+3. Write a program that performs simple operations, the program prints the result od the operation, followed by new line

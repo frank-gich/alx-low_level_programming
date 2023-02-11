@@ -1,30 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
- * main - prints n number of opcodes from main()
- * @argc: count of inputs
- * @argv: array of input including n # of bytes to print
- * Return: 0 success, 1 error, 2 error
+ * main - prints the opcodes of its own main function
+ *
+ * @argv: the argument that enters to the program
+ * @argc: counts the number of arguments
+ *
+ * Return: the opcode hex number
  */
 int main(int argc, char **argv)
 {
-	int i, bytes;
+	int runner = 0, bytes;
+	/* the tasks tell us each opcode is two char long */
+	/* if the argv is less or more then Error */
 
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
+	/* the argument in position one (the number the program receives) */
+	/* will be equal to bytes */
 	bytes = atoi(argv[1]);
+	/* condition if the number of bytes y negative (less than cero) */
+	/* exit status 2 and print Error */
 	if (bytes < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
-	for (i = 0; i < bytes; i++)
+	/* we use runner to go through the array we receive in the argv */
+	while (runner < bytes)
 	{
-		printf("%02x", ((unsigned char *)main)[i]);
-		printf("%c", i < bytes - 1 ? ' ' : '\n');
+		/* is pre define how to print an opcodes */
+		printf("%02hhx", *((char *)(main + runner)));
+		if (bytes > runner + 1)
+			printf(" ");
+		runner++;
 	}
+	printf("\n");
 	return (0);
 }
